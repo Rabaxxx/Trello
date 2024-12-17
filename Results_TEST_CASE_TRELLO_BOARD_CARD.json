@@ -1,0 +1,511 @@
+{
+	"id": "b813d5bc-1db5-4bcf-b54b-65327a3a8885",
+	"name": "trello",
+	"timestamp": "2024-12-17T18:05:23.806Z",
+	"collection_id": "39928907-ea99b8d9-8315-46f0-9f94-c5d69a4307bc",
+	"folder_id": 0,
+	"environment_id": "39928907-54dcd16e-151d-4eab-98a5-b3e5a47bcc08",
+	"totalPass": 42,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-12-17T18:05:18.019Z",
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "2818a11d-7885-4cea-89cd-559a272f6723",
+			"name": "1.1 ADD BOARD",
+			"url": "https://api.trello.com/1/boards/?name=First&key={{trello_key}}&token={{trello_toc}}",
+			"time": 491,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response time is less than 200ms": false,
+				"Presence of required fields": true,
+				"Validate the schema of the response for Trello board creation": true,
+				"Label names object is present and contains all color labels": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Presence of required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate the schema of the response for Trello board creation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Label names object is present and contains all color labels": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				491
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response time is less than 200ms": false,
+					"Presence of required fields": true,
+					"Validate the schema of the response for Trello board creation": true,
+					"Label names object is present and contains all color labels": true
+				}
+			]
+		},
+		{
+			"id": "d876d956-f1d7-4be5-952d-0ffa49c61e8d",
+			"name": "1.2 List Board",
+			"url": "https://api.trello.com/1/boards/6761bd5f38fcf2fd117c7758/lists?key={{trello_key}}&token={{trello_toc}}",
+			"time": 189,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Content type is application/json": true,
+				"Validate the structure of the response object": true,
+				"Id, name, and idBoard are non-empty strings": true,
+				"Closed field is a boolean value": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content type is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate the structure of the response object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Id, name, and idBoard are non-empty strings": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Closed field is a boolean value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				189
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Content type is application/json": true,
+					"Validate the structure of the response object": true,
+					"Id, name, and idBoard are non-empty strings": true,
+					"Closed field is a boolean value": true
+				}
+			]
+		},
+		{
+			"id": "dfd31f4c-54dc-4af1-9a68-9e69bf35fbfb",
+			"name": "1.3 List of list",
+			"url": "https://api.trello.com/1/lists/6761bd5f38fcf2fd117c775f?key={{trello_key}}&token={{trello_toc}}",
+			"time": 193,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Id must be a non-empty string": true,
+				"Closed is a boolean value": true,
+				"Datasource object contains the 'filter' field and its value is a boolean": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Id must be a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Closed is a boolean value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Datasource object contains the 'filter' field and its value is a boolean": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				193
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Id must be a non-empty string": true,
+					"Closed is a boolean value": true,
+					"Datasource object contains the 'filter' field and its value is a boolean": true
+				}
+			]
+		},
+		{
+			"id": "c9611d16-c3bf-4911-8e9d-c68732c7beab",
+			"name": "1.4 ADD Card",
+			"url": "https://api.trello.com/1/cards?idList=6761bd5f38fcf2fd117c775f&key={{trello_key}}&token={{trello_toc}}",
+			"time": 362,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Badges object contains expected keys": true,
+				"Badges should exist and be an object": true,
+				"CheckItemStates should be an empty array": true,
+				"Name should be empty": true,
+				"Labels should be an empty array": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Badges object contains expected keys": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Badges should exist and be an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"CheckItemStates should be an empty array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name should be empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Labels should be an empty array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				362
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Badges object contains expected keys": true,
+					"Badges should exist and be an object": true,
+					"CheckItemStates should be an empty array": true,
+					"Name should be empty": true,
+					"Labels should be an empty array": true
+				}
+			]
+		},
+		{
+			"id": "5e854e9d-9555-4e1f-a71b-8f1f40533339",
+			"name": "1.5 Edit Card",
+			"url": "https://api.trello.com/1/cards/6761bd600c1bf3ce76ce6f59?key={{trello_key}}&token={{trello_toc}}&name=nametest",
+			"time": 330,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Content-Type is application/json": true,
+				"Badges object is present and contains expected fields": true,
+				"CheckItemStates array should be empty": true,
+				"Closed field should be a boolean value": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Badges object is present and contains expected fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"CheckItemStates array should be empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Closed field should be a boolean value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				330
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Content-Type is application/json": true,
+					"Badges object is present and contains expected fields": true,
+					"CheckItemStates array should be empty": true,
+					"Closed field should be a boolean value": true
+				}
+			]
+		},
+		{
+			"id": "b2d7e647-f248-4348-90c5-2c3226640ad9",
+			"name": "1.6 ADD Coment Card",
+			"url": "https://api.trello.com/1/cards/6761bd600c1bf3ce76ce6f59/actions/comments?text=Random text&key={{trello_key}}&token={{trello_toc}}",
+			"time": 293,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Content-Type is application/json": true,
+				"Data object should have non-empty idCard, text, and textData": true,
+				"Limits object contains valid values for reactions": true,
+				"MemberCreator object has non-empty id and username": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data object should have non-empty idCard, text, and textData": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Limits object contains valid values for reactions": {
+					"pass": 1,
+					"fail": 0
+				},
+				"MemberCreator object has non-empty id and username": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				293
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Content-Type is application/json": true,
+					"Data object should have non-empty idCard, text, and textData": true,
+					"Limits object contains valid values for reactions": true,
+					"MemberCreator object has non-empty id and username": true
+				}
+			]
+		},
+		{
+			"id": "ae6df84b-d79c-45ea-92e2-f34b73d64fff",
+			"name": "1.7 Get Card",
+			"url": "https://api.trello.com/1/cards/6761bd600c1bf3ce76ce6f59?key={{trello_key}}&token={{trello_toc}}",
+			"time": 224,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Content-Type header is application/json": true,
+				"Response has the required fields": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type header is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				224
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Content-Type header is application/json": true,
+					"Response has the required fields": true
+				}
+			]
+		},
+		{
+			"id": "2d7c571b-85b9-4ea5-8177-0c93241ca99b",
+			"name": "1.8 Get Card Copy",
+			"url": "https://api.trello.com/1/cards/6761bd600c1bf3ce76ce6f59?key={{trello_key}}&token={{trello_toc}}",
+			"time": 726,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required fields": true,
+				"Verify Content-Type header is application/json": true,
+				"Key and token parameters are present in the request URL": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify Content-Type header is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Key and token parameters are present in the request URL": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				726
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required fields": true,
+					"Verify Content-Type header is application/json": true,
+					"Key and token parameters are present in the request URL": true
+				}
+			]
+		},
+		{
+			"id": "bc44a2d4-94b5-4f9c-aeac-0ccf0fc5d1af",
+			"name": "1.9 Dell Board",
+			"url": "https://api.trello.com/1/boards/6761bd5f38fcf2fd117c7758?key={{trello_key}}&token={{trello_toc}}",
+			"time": 1587,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Content-Type header is application/json": true,
+				"Verify that the _value field is null": true,
+				"Key and token are not present in the response": true,
+				"Response time is less than 200ms": false
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type header is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify that the _value field is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Key and token are not present in the response": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				1587
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Content-Type header is application/json": true,
+					"Verify that the _value field is null": true,
+					"Key and token are not present in the response": true,
+					"Response time is less than 200ms": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4395,
+	"collection": {
+		"requests": [
+			{
+				"id": "2818a11d-7885-4cea-89cd-559a272f6723",
+				"method": "POST"
+			},
+			{
+				"id": "d876d956-f1d7-4be5-952d-0ffa49c61e8d",
+				"method": "GET"
+			},
+			{
+				"id": "dfd31f4c-54dc-4af1-9a68-9e69bf35fbfb",
+				"method": "GET"
+			},
+			{
+				"id": "c9611d16-c3bf-4911-8e9d-c68732c7beab",
+				"method": "POST"
+			},
+			{
+				"id": "5e854e9d-9555-4e1f-a71b-8f1f40533339",
+				"method": "PUT"
+			},
+			{
+				"id": "b2d7e647-f248-4348-90c5-2c3226640ad9",
+				"method": "POST"
+			},
+			{
+				"id": "ae6df84b-d79c-45ea-92e2-f34b73d64fff",
+				"method": "GET"
+			},
+			{
+				"id": "2d7c571b-85b9-4ea5-8177-0c93241ca99b",
+				"method": "DELETE"
+			},
+			{
+				"id": "bc44a2d4-94b5-4f9c-aeac-0ccf0fc5d1af",
+				"method": "DELETE"
+			}
+		]
+	}
+}
